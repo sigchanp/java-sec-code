@@ -20,25 +20,6 @@ environment:
   jiraUserName: <<JIRA_USERNAME>>
   jiraAuthToken: <<JIRA_AUTH_TOKEN>>
 connectors:
-- connector_name: slack
-  fields:
-    channelidentifier: <<SLACK_CHANNEL_ID>>
-    bearertoken: <<SLACK_TOKEN>>
-- connector_name: jira
-  fields:
-    issuetype: Bug
-    projectkey: <<JIRA_PROJECT_NAME>>
-    assignee: <<JIRA_ASSIGNEE>>
-    url: <<JIRA_API_URL>>
-    username: <<JIRA_USERNAME>>
-    authtoken: <<JIRA_AUTH_TOKEN>>
-- connector_name: bitbucket
-  fields:
-    workspace_name: <<SCM_OWNER>>
-    repository_name: <<SCM_REPO_NAME>>
-    commit_id: <<BITBUCKET_COMMIT_ID>>
-    username: <<BITBUCKET_USERNAME>>
-    app_password: <<BITBUCKET_PASSWORD>>
 - connector_name: github
   fields:
     file_path: workflowengine-results.sarif.json
