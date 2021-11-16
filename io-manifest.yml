@@ -1,5 +1,5 @@
 application:
-  projectName: <<PROJECT_NAME>
+  projectName: Demo
 environment:
   scm: <<SCM>>
   scmOwner: <<SCM_OWNER>>
