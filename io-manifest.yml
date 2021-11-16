@@ -1,21 +1,10 @@
 application:
-  appId: <<APP_ID>>
-  assetId: <<ASSET_ID>>
-  appType: Webapp
-  release: major
-  microservice: false
-  projectLanguage: Java
-  platformVersion: Java 8
-  buildSystem: Maven
-  riskMatrixRevision: Rev1.0
-  sourceFilePattern: .*\+\+\+.*(\.java|\.jsp)+.*
-  sensitivePackagePattern: <<SENSITIVE_PACKAGE_PATTERN>>
-  fileChangeThreshold: <<FILE_CHANGE_THRESHOLD>>
+  projectName: <<PROJECT_NAME>
 environment:
-  scm: gitlab
-  scmOwner: chakrava
-  scmRepositoryName: devio
-  scmBranchName: master
+  scm: <<SCM>>
+  scmOwner: <<SCM_OWNER>>
+  scmRepositoryName: <<SCM_REPOSITORY_NAME>>
+  scmBranchName: <SCM_BRANCH_NAME>
   bitbucketUserName: <<BITBUCKET_USERNAME>>
   bitbucketPassword: <<BITBUCKET_PASSWORD>>
   bitbucketApiUrl: https://api.bitbucket.org/2.0/repositories/
@@ -30,12 +19,6 @@ environment:
   jiraApiUrl: <<JIRA_API_URL>>
   jiraUserName: <<JIRA_USERNAME>>
   jiraAuthToken: <<JIRA_AUTH_TOKEN>>
-security:
-  activities:
-    sast:
-      rescanThreshold: <<SAST_RESCAN_THRESHOLD>>
-    sca:
-      rescanThreshold: <<SCA_RESCAN_THRESHOLD>>
 connectors:
 - connector_name: slack
   fields:
@@ -65,6 +48,10 @@ connectors:
     commit_id: <<GITHUB_COMMIT_ID>>
     username: <<GITHUB_USERNAME>>
     accesstoken: <<GITHUB_ACCESS_TOKEN>>
+security:
+  pipeline:
+    type: "Inline"
+    toolchain: "Synopsys"
 buildbreaker:
 - activityname: sast
   status:
