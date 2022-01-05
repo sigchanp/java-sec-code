@@ -1,0 +1,45 @@
+version: "1"
+project:
+  name: java-sec-code-chanp
+  branch: java-sec-code-master
+  revision:
+    name: java-sec-code-master
+    date: "2021-08-20T15:15:35Z"
+capture:
+  build:
+    cleanCommands:
+    - shell: [mvn, -B, -f, pom.xml, clean]
+    buildCommands:
+    - shell: [mvn, -B, -f, pom.xml, install, -DskipTests]
+  fileSystem:
+    ears:
+      extensions: [ear]
+      files:
+      - directory: ${project.projectDir}
+    java:
+      files:
+      - directory: ${project.projectDir}
+    javascript:
+      files:
+      - directory: ${project.projectDir}
+      - excludeRegex: node_modules|bower_components|vendor
+    php:
+      files:
+      - directory: ${project.projectDir}
+    python:
+      files:
+      - directory: ${project.projectDir}
+    ruby:
+      files:
+      - directory: ${project.projectDir}
+    wars:
+      extensions: [war]
+      files:
+      - directory: ${project.projectDir}
+analyze:
+  mode: central
+install:
+  coverity:
+    version: default
+    cov-analyze: ["--all","--webapp-security", "--enable-audit-checkers"]
+serverUrl: https://sipse.polaris.synopsys.com
