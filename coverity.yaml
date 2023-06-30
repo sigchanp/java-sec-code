@@ -1,0 +1,9 @@
+capture:
+  build:
+    clean-command: mvn clean
+    build-command: mvn install  
+
+analyze:
+  checkers:
+    all: true
+    webapp-security:
