@@ -4,6 +4,7 @@ capture:
     build-command: mvn install  
 
 analyze:
+  location: connect
   checkers:
     all: true
     webapp-security:
