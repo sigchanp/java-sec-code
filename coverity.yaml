@@ -7,3 +7,9 @@ analyze:
   checkers:
     all: true
     webapp-security:
+
+commit:
+  connect:
+    project: JSC
+    stream: JSC_2023.3
+    url: https://poc331.coverity.synopsys.com
