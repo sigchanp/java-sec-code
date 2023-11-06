@@ -14,5 +14,5 @@ commit:
   connect:
     project: JSC
     stream: JSC_2023.9
-    url: http://demo.env:8101
+    url: https://poc326.coverity.synopsys.com
 
