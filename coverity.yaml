@@ -4,7 +4,7 @@ capture:
     build-command: mvn install  
 
 analyze:
-  location: connect
+  location: local
   checkers:
     all: true
     webapp-security:
@@ -12,6 +12,7 @@ analyze:
 
 commit:
   connect:
+    on-new-cert: trust
     project: JSC
     stream: JSC_2023.9
     url: https://poc326.coverity.synopsys.com
