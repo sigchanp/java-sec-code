@@ -8,9 +8,11 @@ analyze:
   checkers:
     all: true
     webapp-security:
+      aggressiveness-level: low
 
 commit:
   connect:
     project: JSC
-    stream: JSC_2023.3
-    url: https://poc331.coverity.synopsys.com
+    stream: JSC_2023.9
+    url: http://demo.env:8101
+
