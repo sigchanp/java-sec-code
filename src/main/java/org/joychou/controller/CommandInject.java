@@ -41,8 +41,8 @@ public class CommandInject {
 
         String host = request.getHeader("host");
         logger.info(host);
-        String[] cmdList = new String[]{"sh", "-c", "curl " + host};
-        ProcessBuilder builder = new ProcessBuilder(cmdList);
+        //String[] cmdList = new String[]{"sh", "-c", "curl " + host};
+        ProcessBuilder builder = new ProcessBuilder("curl", request.getHeader("host"));
         builder.redirectErrorStream(true);
         Process process = builder.start();
         return WebUtils.convertStreamToString(process.getInputStream());
