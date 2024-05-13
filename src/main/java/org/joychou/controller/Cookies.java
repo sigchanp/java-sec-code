@@ -54,7 +54,8 @@ public class Cookies {
                 }
             }
         }
-        return "Cookie nick: " + nick;
+        //return "Cookie nick: " + nick;
+        return "Cookie nick: " + HtmlUtils.htmlEscape(nick);
     }
 
 
